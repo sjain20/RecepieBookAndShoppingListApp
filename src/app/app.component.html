@@ -1,16 +1,19 @@
 <!--**************************** Header ****************************-->
-<app-header></app-header>
+<app-header (navigationEvent)="setNavigatedView($event)"></app-header>
 <!--**************************** Header ****************************-->
 <div class="container">
-  <div class="row">
-    <!--**************************** Shopping List ****************************-->
+  <div class="row" *ngIf="recepieListClicked">
+    <!--**************************** Recepie List ****************************-->
     <div class="col-md-12">
       <app-recepies></app-recepies>
     </div>
-    <!--**************************** Shopping List ****************************-->
-
     <!--**************************** Recepie List ****************************-->
-    <app-shopping-list></app-shopping-list>
   </div>
-  <!--**************************** Recepie List ****************************-->
-</div>
+  <hr>
+  <div class="row" *ngIf="shoppingListClicked">
+    <div class="col-md-12">
+      <!--**************************** Shopping List ****************************-->
+      <app-shopping-list></app-shopping-list>
+    </div>
+  </div>
+  <!--**************************** Shopping List ****************************-->
