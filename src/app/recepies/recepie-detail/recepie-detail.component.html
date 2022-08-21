@@ -1,11 +1,11 @@
 <div class="row">
     <div class="col-xs-12">
-        <img src="" alt="RECEPIE NAME" class="img-responsive">
+        <img [src]="selectedRecepie.img" alt="RECEPIE NAME" class="img-responsive">
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <h1>Recepie Name</h1>
+        <h1>{{selectedRecepie.name}}</h1>
     </div>
 </div>
 <div class="row">
@@ -21,7 +21,7 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <h4>Recepie Description</h4>
+        <h4>{{selectedRecepie.description}}</h4>
     </div>
 </div>
 <div class="row">

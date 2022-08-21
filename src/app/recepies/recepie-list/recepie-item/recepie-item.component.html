@@ -1,1 +1,9 @@
-<p>recepie-item works!</p>
+<a href="#" class="list-group-item clearfix" (click)="recepieItemClicked(recepieItem)">
+    <div class="pull-left">
+        <h4 class="list-group-item-heading">{{recepieItem.name}}</h4>
+        <p class="list-group-item-text">{{recepieItem.description}}</p>
+    </div>
+    <span class="pull-right">
+        <img src="{{recepieItem.img}}" alt="" class="img-responsive" style="max-height:70px; max-width: 70px;">
+    </span>
+</a>
