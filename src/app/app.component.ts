@@ -6,24 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  recepieListClicked = false;
-  shoppingListClicked = false;
+  viewLoaded = 'recepie';
   title = 'RecepieBookAndShoppingListApp';
 
   setNavigatedView(view: string) {
-    switch (view) {
-      case "recepie":
-        this.recepieListClicked = true;
-        this.shoppingListClicked = false;
-        break;
-      case "shopping-list":
-        this.recepieListClicked = false;
-        this.shoppingListClicked = true;
-        break;
-      default:
-        this.recepieListClicked = false;
-        this.shoppingListClicked = false;
-        break;
-    }
+    this.viewLoaded = view;
   }
 }

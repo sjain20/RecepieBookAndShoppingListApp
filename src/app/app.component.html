@@ -2,7 +2,7 @@
 <app-header (navigationEvent)="setNavigatedView($event)"></app-header>
 <!--**************************** Header ****************************-->
 <div class="container">
-  <div class="row" *ngIf="recepieListClicked">
+  <div class="row" *ngIf="viewLoaded==='recepie'">
     <!--**************************** Recepie List ****************************-->
     <div class="col-md-12">
       <app-recepies></app-recepies>
@@ -10,7 +10,7 @@
     <!--**************************** Recepie List ****************************-->
   </div>
   <hr>
-  <div class="row" *ngIf="shoppingListClicked">
+  <div class="row" *ngIf="viewLoaded==='shopping-list'">
     <div class="col-md-12">
       <!--**************************** Shopping List ****************************-->
       <app-shopping-list></app-shopping-list>
