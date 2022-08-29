@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Recepie } from '../recepie.model';
+import { RecepieService } from '../recepie.service';
 
 @Component({
   selector: 'app-recepie-list',
@@ -7,17 +8,10 @@ import { Recepie } from '../recepie.model';
   styleUrls: ['./recepie-list.component.css']
 })
 export class RecepieListComponent implements OnInit {
-  @Output('loadSelectedRecepieDetails') loadSelectedRecepieDetails = new EventEmitter<Recepie>();
-  recepies: Recepie[] = [
-    new Recepie("Test Recepie", "Test Description", "https://images.rawpixel.com/image_1000/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHgxMDUyOTU5LWltYWdlLWt3dndoMGF2LmpwZw.jpg"),
-    new Recepie("Test Recepie 2", "Test Description 2", "https://images.rawpixel.com/image_1000/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZnJpbmRpYW5fc3dlZXRfZ3VsYWJfamFtdW4taW1hZ2Uta3liZGdjajAuanBn.jpg")
-  ];
-  constructor() { }
+  recepies: Recepie[];
+  constructor(private recepieService: RecepieService) { }
 
   ngOnInit(): void {
-  }
-
-  setRecepieDetails(recepie: Recepie) {
-    this.loadSelectedRecepieDetails.emit(recepie);
+    this.recepies = this.recepieService.getRecepies();
   }
 }
