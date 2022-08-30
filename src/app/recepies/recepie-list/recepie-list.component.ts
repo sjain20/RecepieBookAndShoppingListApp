@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Recepie } from '../recepie.model';
 import { RecepieService } from '../recepie.service';
 

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Recepie } from '../../recepie.model';
 import { RecepieService } from '../../recepie.service';
 
@@ -7,12 +7,10 @@ import { RecepieService } from '../../recepie.service';
   templateUrl: './recepie-item.component.html',
   styleUrls: ['./recepie-item.component.css']
 })
-export class RecepieItemComponent implements OnInit {
+export class RecepieItemComponent {
   @Input('recepieItem') recepieItem: Recepie
   constructor(private recepieService: RecepieService) { }
 
-  ngOnInit(): void {
-  }
 
   recepieItemClicked(recepie: Recepie) {
     this.recepieService.selectedRecepieItem.emit(recepie);
